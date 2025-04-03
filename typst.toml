@@ -1,12 +1,12 @@
 [package]
-name = "TFGUF"
+name = "TFM_UNIR"
 version = "0.0.1"
-entrypoint = "unirfisica.typ"
-authors = ["Alberto Corbi (UNIR)"]
+entrypoint = "unirtfm.typ"
+authors = ["Victor Gonzalez Morales (UNIR)"]
 license = "MIT"
-description = "Plantilla para hacer TFGs en el Grado en Física de UNIR"
+description = "Plantilla para hacer un TFM de la UNIR"
 
 [template]
 path = "."
-entrypoint = "tfg.typ"
-thumbnail = "uflogo.png"
+entrypoint = "tfm.typ"
+thumbnail = "unir_logo.png"

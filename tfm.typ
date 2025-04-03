@@ -1,8 +1,10 @@
 #let longitud_abstract = 138
-#let unirfisica(
-  titulo: "Título de mi TFG",
-  alumno: "Mi nombre",
-  director: "Nombre de mi director",
+#let unirtfm(
+  titulo: "Título del TFM",
+  alumno: "Nombre/s",
+  director: "Director",
+  co_director: "",
+  fecha: datetime.today(),
   resumen: lorem(longitud_abstract),
   abstract: lorem(longitud_abstract),
   pclave: lorem(6).replace(" ", ", ").replace(",,", ","),
@@ -61,7 +63,7 @@
   Definición de la portada
   */
   align(center)[
-    #image("unir logo.png", width: 60%)
+    #image("unir banner.png", width: 60%)
     #text(font: "calibri", size: 24pt)[Universidad Internacional de la Rioja
     ]
 
@@ -72,12 +74,10 @@
     Nombre del estudio y título del trabajo
     */
     #align(center + horizon)[
-      #text(size: 18pt)[Grado en Física]
+      #text(size: 18pt)[Máster en Inteligencia Artificial]
       #v(-10pt)
       #text(size: 26pt, fill: azulunir, weight: "bold")[#titulo]
     ]
-
-    #let fecha = datetime.today()
 
     /*
      Tabla inferior con los datos del TFG
@@ -88,14 +88,16 @@
         stroke: 0.1pt,
         align: left,
         table.header[Trabajo de fin de estudio presentado por: ][#alumno],
-        [Director/a:], [#director],
+        [Director:], [#director],
+        
+        if Co-Director != "" {
+          ([Co-Director:], [#co_director])
+        },
+        
         [Fecha:], [#fecha.display()],
       )
     ]
   ]
-
-  //pagebreak()
-
 
   pagebreak()
 
